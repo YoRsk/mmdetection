@@ -21,13 +21,13 @@ train_pipeline = [
     dict(type='LoadImageFromFile', backend_args=backend_args),
     dict(
         type='LoadAnnotations', with_bbox=True, with_mask=True, with_seg=True),
-    dict(type='Resize', scale=(512, 512), keep_ratio=True),
+    dict(type='Resize', scale=(1333, 800), keep_ratio=True),
     dict(type='RandomFlip', prob=0.5),
     dict(type='PackDetInputs')
 ]
 test_pipeline = [
     dict(type='LoadImageFromFile', backend_args=backend_args),
-    dict(type='Resize', scale=(512, 512), keep_ratio=True),
+    dict(type='Resize', scale=(1333, 800), keep_ratio=True),
     # If you don't have a gt annotation, delete the pipeline
     dict(
         type='LoadAnnotations', with_bbox=True, with_mask=True, with_seg=True),
@@ -46,10 +46,8 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        ann_file='annotations/0/coco_annotations_train.json',
-        # ann_file='annotations/instances_train2017.json',
-        data_prefix=dict(img='rgb/', seg='stuffthingmaps/train2017/'),
-        # data_prefix=dict(img='train2017/', seg='stuffthingmaps/train2017/'),
+        ann_file='annotations/instances_train2017.json',
+        data_prefix=dict(img='train2017/', seg='stuffthingmaps/train2017/'),
         filter_cfg=dict(filter_empty_gt=True, min_size=32),
         pipeline=train_pipeline,
         backend_args=backend_args))
