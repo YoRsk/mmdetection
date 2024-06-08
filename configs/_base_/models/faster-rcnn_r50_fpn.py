@@ -16,7 +16,6 @@ model = dict(
         norm_cfg=dict(type='BN', requires_grad=True),
         norm_eval=True,
         style='pytorch',
-        # init_cfg=dict(type='Pretrained', checkpoint='C:\\Users\\liuyi\\segment\\mmdetection\\mmpretrain\\work_dirs\\simclr_resnet50_16xb256-coslr-800e_custom\\epoch_50.pth')),
         init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
     neck=dict(
         type='FPN',
@@ -51,8 +50,7 @@ model = dict(
             in_channels=256,
             fc_out_channels=1024,
             roi_feat_size=7,
-            num_classes=5,#不知道为什么原作者是6
-            # num_classes=1,
+            num_classes=1,
             # num_classes=80,
             bbox_coder=dict(
                 type='DeltaXYWHBBoxCoder',
