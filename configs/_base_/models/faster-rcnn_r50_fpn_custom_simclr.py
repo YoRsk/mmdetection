@@ -16,8 +16,8 @@ model = dict(
         norm_cfg=dict(type='BN', requires_grad=True),
         norm_eval=True,
         style='pytorch',
-        # init_cfg=dict(type='Pretrained', checkpoint='C:\\Users\\liuyi\\segment\\mmdetection\\mmpretrain\\work_dirs\\simclr_resnet50_16xb256-coslr-800e_custom\\epoch_50.pth')),
-        init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
+        init_cfg=dict(type='Pretrained', checkpoint='C:\\Users\\liuyi\\segment\\mmdetection\\mmpretrain\\work_dirs\\simclr_resnet50_16xb256-coslr-800e_custom\\epoch_50.pth')),
+        # init_cfg=dict(type='Pretrained', checkpoint='torchvision://resnet50')),
     neck=dict(
         type='FPN',
         in_channels=[256, 512, 1024, 2048],

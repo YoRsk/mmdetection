@@ -16,7 +16,8 @@ class CocoDataset(BaseDetDataset):
 
     METAINFO = {
         'classes':
-        ('tree',),
+        ('Dead', 'Healthy', 'Grass', 'Small', 'Yellow',),
+        # ('tree',),
         # ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train',
         #  'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign',
         #  'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep',
